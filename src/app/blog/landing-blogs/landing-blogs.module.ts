@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
-import { PendingBlogComponent } from './pending-blog.component';
+import { LandingBlogsComponent } from './landing-blogs.component';
+
+
 const routes: Route[]=[
     {
     path: '',
-    component: PendingBlogComponent
+    component: LandingBlogsComponent
     }
 ]
 
 @NgModule({
-declarations: [PendingBlogComponent],
-exports:[PendingBlogComponent],
+declarations: [LandingBlogsComponent],
+exports:[LandingBlogsComponent],
 imports: [
     RouterModule.forChild(routes),
     CommonModule
   ]
 })
-export class PendingBlogModule { }
+
+export class LandingBlogsModule { }

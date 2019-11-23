@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'onewater-admin';
-  showHeader = true;
+  showHeader;
   logstatus:Subscription;
   constructor(public router:Router, private auth: AuthService){}
 
@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
     //   console.log(result)
     //   this.showHeader=result.status
     // })
-    
     const temp=this.auth.isUserAuthenticated();
     this.showHeader=temp
 
@@ -29,17 +28,17 @@ export class AppComponent implements OnInit {
       console.log(response)
       this.showHeader=response.status
     })
-    // this.router.events.forEach((event) => {
-    //   if (event instanceof NavigationStart) {
-    //     if (event['url'] == '/login' || event['url'] == '/register') {
-    //       console.log('login')
-    //       this.showHeader = false;
-    //     } else {
-    //       this.showHeader = true;
-    //     }
+    this.router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        if (event['url'] == '/login' || event['url'] == '/register') {
+          console.log('login')
+          this.showHeader = false;
+        } else {
+          this.showHeader = true;
+        }
 
-    //   }
-    // });
+      }
+    });
   }
 
 }

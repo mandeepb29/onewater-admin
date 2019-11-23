@@ -13,10 +13,10 @@
                 <div class="col-12">
                     <h4 class="content-head">Pending Blogs</h4>
                     <!-- <p class="text-muted">This is 3 column contents</p> -->
-                    <ngx-masonry [useImagesLoaded]="true">
-                         <div ngxMasonryItem class="masonry-item" *ngFor="let blog of allblogs">
-                            <div class="card">
-                                <img class="img-fluid" [src]=blog.image alt="">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6" *ngFor="let blog of allblogs">
+                           <div class="card">
+                               <img class="blog-img" [src]=blog.image alt="">
                                 <div class="card-body">
                                     <h5 class="card-title">{{blog.title}}</h5>
                                     <p class="card-text">{{blog.author_name}}</p>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <!-- End Col -->
-                      </ngx-masonry>
+                    </div>
                 </div>
             </div>
 

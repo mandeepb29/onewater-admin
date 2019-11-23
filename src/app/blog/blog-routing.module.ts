@@ -41,6 +41,18 @@ const routes: Routes = [
 {
   path: 'authorsblog',
   loadChildren: './author-blog/author-blog.module#AuthorBlogModule'
+},
+{
+  path: 'landingblogs',
+  loadChildren: './landing-blogs/landing-blogs.module#LandingBlogsModule'
+},
+{
+  path: 'createblog/:id',
+  loadChildren: './create-blog/create-blog.module#CreateBlogModule'
+},
+{
+  path: 'adminblog/:id',
+  loadChildren: './admin-blogdetails/admin-blogdetails.module#AdminBlogdetailsModule'
 }
 ];
 

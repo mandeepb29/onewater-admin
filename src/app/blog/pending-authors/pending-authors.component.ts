@@ -15,7 +15,7 @@ export class PendingAuthorsComponent implements OnInit {
   ngOnInit() {
     this.common.getNotApprovedAuthor()
     .subscribe(result=> {
-      this.allauthors= result.result;
+      this.allauthors= result.result.reverse();
       console.log(this.allauthors);
     })
   }

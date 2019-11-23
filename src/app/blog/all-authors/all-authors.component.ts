@@ -13,7 +13,7 @@ export class AllAuthorsComponent implements OnInit {
   ngOnInit() {
     this.common.getAllAuthor()
     .subscribe(result=> {
-      this.allauthors= result.result;
+      this.allauthors= result.result.reverse();
       console.log(this.allauthors);
     })
   }

@@ -50,7 +50,7 @@ console.log(temp)
           status:this.loggedIn
       })
       this.token=token;
-      this.router.navigate(['dashboard']);
+      // this.router.navigate(['dashboard']);
       }
 
 

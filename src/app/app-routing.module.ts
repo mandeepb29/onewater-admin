@@ -3,11 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthorVideoComponent } from './blog/author-video/author-video.component';
+import { AuthorVideoDescComponent } from './blog/author-video-desc/author-video-desc.component';
 
 const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent
+  },
+  {
+    path:'authorvideo',
+    component:AuthorVideoComponent
+  },
+  {
+    path:'authorvideodesc/:id',
+    component:AuthorVideoDescComponent
   },
   {
     path:'login',
@@ -36,12 +46,12 @@ const routes: Routes = [
 {
 path: 'subs',
 loadChildren: './user-suscribed/user-suscribed.module#UserSuscribedModule'
-},
-  {
-  path: '**',
-  redirectTo:'/dashboard',
-  pathMatch: 'full'
-},
+}
+//   {
+//   path: '**',
+//   redirectTo:'/login',
+//   pathMatch: 'full'
+// },
 ];
 
 @NgModule({

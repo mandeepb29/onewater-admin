@@ -32,10 +32,12 @@ export class BlogOperationService {
     return this.http.get<{status:any,msg:any,result:any}>('https://onewater-blog-api.herokuapp.com/singleappblog/'+blogid);
   }
 
-  approve(blogid,mainid){
+  approve(blogid,mainid,category, subcategory){
     const id={
       mainid:mainid,
-      id:blogid
+      id:blogid,
+      category:category,
+      subcategory:subcategory
     }
       this.http.post<{status:any,msg:any,result:any}>('https://onewater-blog-api.herokuapp.com/approve-blog',id)
       .subscribe(result=> {

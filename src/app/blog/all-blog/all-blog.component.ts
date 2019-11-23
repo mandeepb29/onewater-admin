@@ -17,7 +17,10 @@ export class AllBlogComponent implements OnInit {
       this.blogservice.getAllBlogs()
       .subscribe(result=>{
         console.log(result);
-        this.allblogs=result.result;
+        this.allblogs=result.result.reverse();
       })
   }
+
+
+
 }

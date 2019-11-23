@@ -14,6 +14,9 @@ export class BlogdetailsComponent implements OnInit {
 blogid;
 blog;
 author;
+category;
+subcategory;
+showSubcatrgory;
   ngOnInit() {
     this.route.params.subscribe(result=>{
       this.blogid=result.id
@@ -38,11 +41,24 @@ author;
 
   approve(blogid,mainid){
     console.log(blogid,mainid);
-    this.blogservice.approve(blogid,mainid);
+    this.blogservice.approve(blogid,mainid, this.category, this.subcategory);
   }
 
   reject(blogid,mainid){
     console.log(blogid,mainid);
     this.blogservice.reject(blogid,mainid);
+  }
+
+  onChange(event){
+    // console.log('hitttt');
+    this.category=event.target.value;
+    const newVal = event.target.value;
+    this.showSubcatrgory=newVal;
+    console.log(this.category, this.showSubcatrgory)
+  }
+
+  onChangesub(event){
+    this.subcategory=event.target.value
+    console.log(this.category, this.subcategory,'fwfe');
   }
 }

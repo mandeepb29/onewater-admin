@@ -15,7 +15,7 @@ export class PendingBlogComponent implements OnInit {
       this.blogservice.getNotApprovedBlogs()
       .subscribe(result=>{
         console.log(result);
-        this.allblogs=result.result;
+        this.allblogs=result.result.reverse();
       })
   }
 

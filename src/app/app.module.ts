@@ -9,6 +9,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent} from './login/login.component';
 import { RegisterComponent} from './register/register.component';
+import { AuthorVideoComponent } from './blog/author-video/author-video.component';
+import { AuthorVideoDescComponent } from './blog/author-video-desc/author-video-desc.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { RegisterComponent} from './register/register.component';
     HeaderComponent,
     SidebarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AuthorVideoDescComponent,
+    AuthorVideoComponent
   ],
   imports: [
     BrowserModule,
